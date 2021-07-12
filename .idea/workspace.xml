@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c3c37da-95bc-4a2b-9e98-38b79d42e130" name="Default Changelist" comment="" />
+    <list default="true" id="8c3c37da-95bc-4a2b-9e98-38b79d42e130" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +129,16 @@
       <updated>1625741624710</updated>
       <workItem from="1625741630429" duration="1792000" />
       <workItem from="1625743457141" duration="7345000" />
-      <workItem from="1626097450255" duration="483000" />
+      <workItem from="1626097450255" duration="815000" />
     </task>
+    <task id="LOCAL-00001" summary="gitignore1">
+      <created>1626098123984</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626098123984</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +154,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gitignore1" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
