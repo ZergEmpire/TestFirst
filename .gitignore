@@ -2,7 +2,7 @@
 .idea
 *.iml
 /target/
-allure-results
+target/allure-results
 TestFirst.iml
 build
 .allure
