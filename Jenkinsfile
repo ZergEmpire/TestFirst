@@ -23,7 +23,7 @@ pipeline {
                 script {
                     $path = '/allure-report'
                     dir ($path){
-                        sh "ls"
+                        sh "sudo -p pass mkdir allure-report"
                     }
                     echo $path
                     allure([
