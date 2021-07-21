@@ -21,7 +21,8 @@ pipeline {
 
 
                 script {
-                    $path = $WORKSPACE+'/target/allure-results'
+                    dir ('~/workspace/selenium_tests@2/ApiTestAutomation/ApiHubTestAutomation')
+                    $path = '/target/allure-results'
 
                     echo $path
                     allure([
