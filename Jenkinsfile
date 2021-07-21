@@ -21,7 +21,7 @@ pipeline {
 
 
                 script {
-                    $path = 'allure-report'
+                    $path = '/var/lib/jenkins/workspace/Test/allure-report'
 
                     echo $path
                     allure([
