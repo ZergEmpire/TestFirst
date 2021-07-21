@@ -18,13 +18,13 @@ pipeline {
         }
         stage('generate allure report') {
             steps {
-                $path = '/target/allure-results'
-                dir ($path){
-                    sh "ls"
-                }
+
 
                 script {
-
+                    $path = '/target/allure-results'
+                    dir ($path){
+                        sh "ls"
+                    }
                     echo $path
                     allure([
                             includeProperties: false,
