@@ -21,10 +21,11 @@ pipeline {
 
 
                 script {
+                    sh "sudo -p pass mkdir allure-report"
                     $path = '/allure-report'
-                    dir ($path){
-                        sh "sudo -p pass mkdir allure-report"
-                    }
+                    //dir ($path){
+                    //    sh "sudo -p pass mkdir allure-report"
+                    //}
                     echo $path
                     allure([
                             includeProperties: false,
