@@ -18,13 +18,17 @@ pipeline {
         }
         stage('generate allure report') {
             steps {
+
+
                 script {
+                    $path = 'target/allure-results'
+                    echo $path
                     allure([
                             includeProperties: false,
                             jdk: '',
                             properties: [],
                             reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'target/allure-results']]
+                            results: [[path: $path]]
                     ])
                 }
 
