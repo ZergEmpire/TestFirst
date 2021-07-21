@@ -21,7 +21,7 @@ pipeline {
 
 
                 script {
-                    $path = '$WORKSPACE/target/allure-results'
+                    $path = $WORKSPACE+'/target/allure-results'
 
                     echo $path
                     allure([
