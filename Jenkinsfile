@@ -21,7 +21,7 @@ pipeline {
 
 
                 script {
-                    $path = 'target/allure-results'
+                    $path = 'allure-report'
 
                     echo $path
                     allure([
@@ -30,7 +30,6 @@ pipeline {
                             properties: [],
                             reportBuildPolicy: 'ALWAYS',
                             results: [[path: $path]],
-                            reports: 'target/allure - reports'
                     ])
                 }
 
