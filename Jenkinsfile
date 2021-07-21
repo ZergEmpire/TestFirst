@@ -22,6 +22,7 @@ pipeline {
 
                 script {
                     $path = 'target/allure-results'
+
                     echo $path
                     allure([
                             includeProperties: false,
