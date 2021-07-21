@@ -18,11 +18,12 @@ pipeline {
         }
         stage('generate allure report') {
             steps {
-
+                $path = '/target/allure-results'
+                dir ($path){
+                    sh "ls"
+                }
 
                 script {
-                    dir ('~/workspace/selenium_tests@2/ApiTestAutomation/ApiHubTestAutomation')
-                    $path = '/target/allure-results'
 
                     echo $path
                     allure([
