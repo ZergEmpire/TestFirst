@@ -21,7 +21,7 @@ pipeline {
 
 
                 script {
-                    $path = '~/allure-results'
+                    $path = '/allure-report'
                     dir ($path){
                         sh "ls"
                     }
