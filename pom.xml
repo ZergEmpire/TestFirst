@@ -13,7 +13,7 @@
         <!--WEB ТЕСТИРОВАНИЕ-->
         <selenide.version>5.7.0</selenide.version>
         <!--ОТЧЕТ ALLURE-->
-        <allure.version>2.13.0</allure.version>
+        <allure.version>2.14.0</allure.version>
         <!--LOMBOK-->
         <lombok.version>1.18.10</lombok.version>
         <!--ТЕСТ РАННЕР-->
@@ -37,7 +37,7 @@
             <artifactId>allure-maven</artifactId>
             <version>2.10.0</version>
             <configuration>
-                <reportVersion>2.13.0</reportVersion>
+                <reportVersion>2.14.0</reportVersion>
             </configuration>
         </plugin>
         <plugin>
