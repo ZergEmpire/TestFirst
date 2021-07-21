@@ -19,7 +19,6 @@ pipeline {
         stage('generate allure report') {
             steps {
                 script {
-                    sh "sudo -S pass mkdir allure-report"
                     $path = '/allure-report'
                     //dir ($path){
                     //    sh "sudo -p pass mkdir allure-report"
