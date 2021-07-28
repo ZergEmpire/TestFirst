@@ -9,11 +9,12 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <!--WEB ТЕСТИРОВАНИЕ-->
         <selenide.version>5.7.0</selenide.version>
         <!--ОТЧЕТ ALLURE-->
-        <allure.version>2.14.0</allure.version>
+        <allure.version>2.10.0</allure.version>
         <!--LOMBOK-->
         <lombok.version>1.18.10</lombok.version>
         <!--ТЕСТ РАННЕР-->
@@ -23,23 +24,59 @@
 
     <build>
     <plugins>
-    <plugin>
+        <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
         <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
+            <useSystemClassLoader>false</useSystemClassLoader>
+            <argLine>
+                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar"
+            </argLine>
+            <properties>
+                <property>
+                    <name>listener</name>
+                    <value>io.qameta.allure.junit5.AllureJunit5</value>
+                </property>
+            </properties>
+            <systemProperties>
+                <property>
+                    <name>allure.results.directory</name>
+                    <value>${project.build.directory}/target/allure-results</value>
+                </property>
+            </systemProperties>
         </configuration>
+        <dependencies>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.8.10</version>
+            </dependency>
+        </dependencies>
+
     </plugin>
         <plugin>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-maven</artifactId>
             <version>2.10.0</version>
             <configuration>
-                <reportVersion>2.14.0</reportVersion>
+                <reportVersion>2.13.0</reportVersion>
             </configuration>
         </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.1.1</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>test.First</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -54,6 +91,18 @@
                 <argLine>
                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.1/aspectjweaver-1.9.1.jar"
                 </argLine>
+                <properties>
+                    <property>
+                        <name>listener</name>
+                        <value>io.qameta.allure.junit5.AllureJunit5</value>
+                    </property>
+                </properties>
+                <systemProperties>
+                    <property>
+                        <name>allure.results.directory</name>
+                        <value>${project.build.directory}/target/allure-results</value>
+                    </property>
+                </systemProperties>
             </configuration>
             <!-- Aгент, который слушает события Allure и собирает информацию для отчета-->
             <dependencies>
@@ -66,6 +115,18 @@
         </plugin>
     </plugins>
     </build>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+
+            </plugin>
+        </plugins>
+    </reporting>
 
     <dependencies>
         <!--WEB ТЕСТИРОВАНИЕ-->

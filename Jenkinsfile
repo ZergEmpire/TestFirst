@@ -20,9 +20,6 @@ pipeline {
             steps {
                 script {
                     $path = '/allure-report'
-                    //dir ($path){
-                    //    sh "sudo -p pass mkdir allure-report"
-                    //}
                     echo $path
                     allure([
                             includeProperties: false,
