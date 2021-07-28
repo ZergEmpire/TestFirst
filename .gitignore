@@ -1,8 +1,0 @@
-
-.idea
-*.iml
-/target/
-target/allure-results
-TestFirst.iml
-build
-.allure
