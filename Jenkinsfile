@@ -19,14 +19,8 @@ pipeline {
         stage('generate allure report') {
             steps {
                 script {
-                    $path = '/target/allure-report'
-                    echo $path
                     allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: $path]],
+                            includeProperties: false, jdk: '', results: [[path: '/target/allure-results']],
                     ])
                 }
 
