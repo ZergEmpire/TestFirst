@@ -13,15 +13,10 @@ public class First{
 
     @Test
     public void test(){
-        //System.setProperty("chromeoptions.args", "\"--no-sandbox\",\"--disable-dev-shm-usage\"");
-        //ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.setHeadless(true);
-        //chrome_options.addArguments("--no-sandbox");
-        //chrome_options.setBinary("/usr/bin/google-chrome-stable");
-
-        //WebDriver webDriver = new ChromeDriver(chrome_options);
-
+        //Проперти так как нет Иксов на сервере
+        System.setProperty("chromeoptions.args", "\" --no-sandbox\",\" --disable-dev-shm-usage\",\" --headless \"");
         System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome-stable");
+
         open("https://tokapizza.ru/");
         $(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
         //$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("ХУЙ"));
