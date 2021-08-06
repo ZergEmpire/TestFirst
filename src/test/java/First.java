@@ -7,6 +7,7 @@ public class First{
 
     @Test
     public void test(){
+        System.setProperty("chromeoptions.args", "\"--no-sandbox\",\"--disable-dev-shm-usage\"");
         Selenide.open("https://tokapizza.ru/");
         Selenide.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
         //Selenide.$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("ХУЙ"));
