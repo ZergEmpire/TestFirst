@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import org.apache.commons.exec.OS;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,14 +18,16 @@ public class First{
         //Проперти так как нет Иксов на сервере
         //ЧТО ТО ИЗ ЭТОГО ПИЗДЕЦ КАК ВАЖНО
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
-        Configuration.headless = true;
-        System.setProperty("chromeoptions.args", "\"--no-sandbox\"");
-        System.setProperty("chromeoptions.args", "\"--disable-dev-shm-usage\"");
-        System.setProperty("chromeoptions.args", "--disable-gpu");
-        System.setProperty("chromeoptions.args", "--headless");
-        System.setProperty("chromeoptions.args", "--disable-setuid-sandbox");
-        System.setProperty("chromeoptions.args", "--test-type");
-        System.setProperty("webdriver.chrome.whitelistedIps", "");
+        if (OS.isFamilyUnix()) {
+            Configuration.headless = true;
+            System.setProperty("chromeoptions.args", "\"--no-sandbox\"");
+            System.setProperty("chromeoptions.args", "\"--disable-dev-shm-usage\"");
+            System.setProperty("chromeoptions.args", "--disable-gpu");
+            System.setProperty("chromeoptions.args", "--headless");
+            System.setProperty("chromeoptions.args", "--disable-setuid-sandbox");
+            System.setProperty("chromeoptions.args", "--test-type");
+            System.setProperty("webdriver.chrome.whitelistedIps", "");
+        }
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
 
         open("https://tokapizza.ru/");
