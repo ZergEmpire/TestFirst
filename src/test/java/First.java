@@ -14,12 +14,12 @@ public class First{
     @Test
     public void test(){
         //System.setProperty("chromeoptions.args", "\"--no-sandbox\",\"--disable-dev-shm-usage\"");
-        ChromeOptions chrome_options = new ChromeOptions();
-        chrome_options.setHeadless(true);
-        chrome_options.addArguments("--no-sandbox");
+        //ChromeOptions chrome_options = new ChromeOptions();
+        //chrome_options.setHeadless(true);
+        //chrome_options.addArguments("--no-sandbox");
         //chrome_options.setBinary("/usr/bin/google-chrome-stable");
 
-        WebDriver webDriver = new ChromeDriver(chrome_options);
+        //WebDriver webDriver = new ChromeDriver(chrome_options);
 
         System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome-stable");
         open("https://tokapizza.ru/");
