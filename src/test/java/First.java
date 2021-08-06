@@ -14,7 +14,7 @@ public class First{
     @Test
     public void test(){
         //Проперти так как нет Иксов на сервере
-        System.setProperty("chromeoptions.args", "\" --no-sandbox\",\" --disable-dev-shm-usage\",\" --headless \"");
+        System.setProperty("chromeoptions.args", "\" --no-sandbox\",\" --disable-gpu\",,\" --disable-dev-shm-usage\",\" --headless \"");
         System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome-stable");
 
         open("https://tokapizza.ru/");
