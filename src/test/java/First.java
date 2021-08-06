@@ -14,8 +14,14 @@ public class First{
     @Test
     public void test(){
         //Проперти так как нет Иксов на сервере
-        System.setProperty("chromeoptions.args", "\" --no-sandbox\",\" --disable-gpu\",,\" --disable-dev-shm-usage\",\" --headless \"");
+
         System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome-stable");
+        //System.setProperty("chromeoptions.args", "\" --no-sandbox\",\" --disable-gpu\",,\" --disable-dev-shm-usage\",\" --headless \"");
+
+        System.setProperty("chromeoptions.args", "--no-sandbox --headless");
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--disable-extensions");
+
 
         open("https://tokapizza.ru/");
         $(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
