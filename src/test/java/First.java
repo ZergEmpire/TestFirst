@@ -15,10 +15,8 @@ public class First{
     @Test
     public void test(){
         //Проперти так как нет Иксов на сервере
-
-        //System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome-stable");
-        //System.setProperty("chromeoptions.args", "\" --no-sandbox\",\" --disable-gpu\",,\" --disable-dev-shm-usage\",\" --headless \"");
-
+        //ЧТО ТО ИЗ ЭТОГО ПИЗДЕЦ КАК ВАЖНО
+        //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
         Configuration.headless = true;
         System.setProperty("chromeoptions.args", "\"--no-sandbox\"");
         System.setProperty("chromeoptions.args", "\"--disable-dev-shm-usage\"");
@@ -27,9 +25,7 @@ public class First{
         System.setProperty("chromeoptions.args", "--disable-setuid-sandbox");
         System.setProperty("chromeoptions.args", "--test-type");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--disable-extensions");
-
+        //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
 
         open("https://tokapizza.ru/");
         $(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
