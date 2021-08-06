@@ -25,8 +25,6 @@ public class First{
         open("https://tokapizza.ru/");
         $(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
         //$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("ХУЙ"));
-
-        webDriver.close();
         System.out.println();
     }
 
