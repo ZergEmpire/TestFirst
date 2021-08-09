@@ -1,7 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.apache.commons.exec.OS;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -10,7 +9,7 @@ public class First{
     @Test
     public void test(){
 
-        if (OS.isFamilyUnix()) {
+       /* if (OS.isFamilyUnix()) *///{
             Configuration.headless = true;
             System.setProperty("chromeoptions.args", "\"--no-sandbox\"");
             System.setProperty("chromeoptions.args", "\"--disable-dev-shm-usage\"");
@@ -19,7 +18,7 @@ public class First{
             System.setProperty("chromeoptions.args", "--disable-setuid-sandbox");
             System.setProperty("chromeoptions.args", "--test-type");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
-        }
+        //}
 
         Selenide.open("https://tokapizza.ru/");
         Selenide.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
