@@ -7,31 +7,16 @@ import org.apache.commons.exec.OS;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CommandExecutor;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.util.Map;
-
-import static com.codeborne.selenide.Selenide.*;
 
 public class First{
 
     @Test
     public void test(){
+
         //Проперти так как нет Иксов на сервере
         //ЧТО ТО ИЗ ЭТОГО ПИЗДЕЦ КАК ВАЖНО
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
-        /*if (OS.isFamilyUnix()) {
+  /*     *//* if (OS.isFamilyUnix()) *//*//{
             Configuration.headless = true;
             System.setProperty("chromeoptions.args", "\"--no-sandbox\"");
             System.setProperty("chromeoptions.args", "\"--disable-dev-shm-usage\"");
@@ -79,8 +64,10 @@ public class First{
         //driver.open("https://tokapizza.ru/");
         //driver.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
         $(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("Пицца"));
+        //Selenide.open("https://tokapizza.ru/");
+        //Selenide.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
+        //Selenide.$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("Пицца"));
 
-        System.out.println();
     }
 
 }

@@ -1,30 +1,39 @@
 pipeline {
     agent any
-    tools {
-        maven 'maven'
-        allure 'allure'
-    }
-    stages {
-        stage('clone repository') {
-            steps {
-                deleteDir()
-                git branch: 'master', credentialsId: 'gitlab_new', url: 'https://github.com/ZergEmpire/TestFirst.git'
+    tools
+            {
+                maven 'maven'
             }
-        }
+    stages {
+        stage("Git Checkout")
+                {
+                    steps{
+                        git branch: 'master',
+                                url: 'https://github.com/MessirVoland/TestFirst'
+                    }
+
+                }
+
+        stage('Build')
+                {
+                    steps {
+                        sh 'mvn compile'
+                    }
+                }
+
         stage('run tests') {
             steps {
-                sh "mvn test -Dselenide.browser=chrome -Dselenide.remote=http://192.168.1.17:8080/wd/hub"
+                sh "mvn -Dtest=First test"
             }
         }
+
         stage('generate allure report') {
             steps {
                 script {
                     allure([
-                            includeProperties: false, jdk: '', results: [[path: 'allure-results']],
+                            includeProperties: false, jdk: '', results: [[path: 'target/target/allure-results/']],
                     ])
                 }
-
-               // allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             }
         }
     }
