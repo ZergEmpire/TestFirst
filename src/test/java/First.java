@@ -38,8 +38,8 @@ public class First{
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "UNKNOWN");
-        capabilities.setCapability("browserVersion", "");
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "91.0");
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
