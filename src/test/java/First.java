@@ -11,7 +11,7 @@ public class First{
         Selenide.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
         Selenide.$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("ХУЙ"));
 
-        System.out.println();
+
     }
 
 }
