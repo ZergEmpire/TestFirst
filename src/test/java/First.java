@@ -25,7 +25,7 @@ public class First{
         //Проперти так как нет Иксов на сервере
         //ЧТО ТО ИЗ ЭТОГО ПИЗДЕЦ КАК ВАЖНО
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
-        if (OS.isFamilyUnix()) {
+        /*if (OS.isFamilyUnix()) {
             Configuration.headless = true;
             System.setProperty("chromeoptions.args", "\"--no-sandbox\"");
             System.setProperty("chromeoptions.args", "\"--disable-dev-shm-usage\"");
@@ -34,20 +34,21 @@ public class First{
             System.setProperty("chromeoptions.args", "--disable-setuid-sandbox");
             System.setProperty("chromeoptions.args", "--test-type");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
-
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("browserName", "UNKNOWN");
-            capabilities.setCapability("browserVersion", "");
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                    "enableVNC", true,
-                    "enableVideo", true
-            ));
-            RemoteWebDriver driver = new RemoteWebDriver(
-                    URI.create("http://selenoid:4444/wd/hub").toURL(),
-                    capabilities
-            );
-        }
+        }*/
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "UNKNOWN");
+        capabilities.setCapability("browserVersion", "");
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        RemoteWebDriver driver = new RemoteWebDriver(
+                URI.create("http://selenoid:4444/wd/hub").toURL(),
+                capabilities
+        );
+
 
         open("https://tokapizza.ru/");
         $(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
