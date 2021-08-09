@@ -22,7 +22,7 @@ public class First{
 
         Selenide.open("https://tokapizza.ru/");
         Selenide.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
-        Selenide.$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("ХУЙ"));
+        Selenide.$(By.xpath("//div[contains(@class, \"section-title\")]")).shouldHave(Condition.enabled).shouldHave(Condition.exactText("Пицца"));
 
 
     }
