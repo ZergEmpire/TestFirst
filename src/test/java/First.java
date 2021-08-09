@@ -1,12 +1,15 @@
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import lombok.SneakyThrows;
-import org.apache.commons.exec.OS;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
+
+import static com.codeborne.selenide.Selenide.*;
 
 public class First{
 
