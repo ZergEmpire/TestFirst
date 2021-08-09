@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import lombok.SneakyThrows;
 import org.apache.commons.exec.OS;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -8,11 +9,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CommandExecutor;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.URI;
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class First{
 
+    @SneakyThrows
     @Test
     public void test(){
         //Проперти так как нет Иксов на сервере
@@ -27,6 +34,18 @@ public class First{
             System.setProperty("chromeoptions.args", "--disable-setuid-sandbox");
             System.setProperty("chromeoptions.args", "--test-type");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
+
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("browserName", "UNKNOWN");
+            capabilities.setCapability("browserVersion", "");
+            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                    "enableVNC", true,
+                    "enableVideo", true
+            ));
+            RemoteWebDriver driver = new RemoteWebDriver(
+                    URI.create("http://selenoid:4444/wd/hub").toURL(),
+                    capabilities
+            );
         }
         //=== --- === --- === --- === --- === --- === --- === --- === --- === --- === --- === ---
 
