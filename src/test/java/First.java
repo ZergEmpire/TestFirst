@@ -34,7 +34,7 @@ public class First{
         ));
         try {
             RemoteWebDriver driver = new RemoteWebDriver(
-                    URI.create("http://selenoid:4444/wd/hub").toURL(),
+                    URI.create("http://192.168.1.17:8080/wd/hub").toURL(),
                     capabilities
             );
         } catch (MalformedURLException e) {
