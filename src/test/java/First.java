@@ -2,6 +2,11 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.URI;
+import java.util.Map;
 
 public class First{
 
@@ -18,6 +23,18 @@ public class First{
             System.setProperty("chromeoptions.args", "--test-type");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
         //}*/
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "91.0");
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        RemoteWebDriver driver = new RemoteWebDriver(
+                URI.create("http://selenoid:4444/wd/hub").toURL(),
+                capabilities
+        );
 
         Selenide.open("https://tokapizza.ru/");
         Selenide.$(By.xpath("//a[@href=\"/menu/pizza\"]")).click();
